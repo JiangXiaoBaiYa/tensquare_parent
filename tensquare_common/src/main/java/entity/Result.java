@@ -4,11 +4,11 @@ package entity;
  * @Author: 姜光明
  * @Date: 2019/8/14 20:28
  */
-public class Result {
-    private boolean flag;
-    private Integer code;
-    private String message;
-    private Object data;
+public class Result<T> {
+    private boolean flag;//是否成功
+    private Integer code;//返回码
+    private String message;//返回信息
+    private Object data;//返回数据
 
     public Result() {
     }
