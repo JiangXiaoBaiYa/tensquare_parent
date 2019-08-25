@@ -122,6 +122,14 @@ public class ProblemController {
 		Page<Problem> pageList = problemService.findHotListByLabelId(labelid, page, size);
 		return new Result(true, StatusCode.OK, "查询成功", new PageResult<>(pageList.getTotalElements(), pageList.getContent()));
 	}
+	/**
+	 * 根据标签ID查询等待回答列表
+	 */
+	@RequestMapping(value = "/hotlist/{labelid}/{page}/{size}", method = RequestMethod.GET)
+	public Result findWaitListByLabelId(@PathVariable String labelid,@PathVariable int page,@PathVariable int size ){
+		Page<Problem> pageList = problemService.findWaitListByLabelId(labelid, page, size);
+		return new Result(true, StatusCode.OK, "查询成功", new PageResult<>(pageList.getTotalElements(), pageList.getContent()));
+	}
 
 	
 }
