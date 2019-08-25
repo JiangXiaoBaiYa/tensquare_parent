@@ -162,4 +162,11 @@ public class EnterpriseService {
 
 	}
 
+	/**
+	 * 热门企业列表
+	 */
+	public List<Enterprise> hotlist() {
+		return enterpriseDao.findByIshot("1");
+	}
+
 }

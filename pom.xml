@@ -11,11 +11,12 @@
         <module>tensquare_common</module>
         <module>tensquare_base</module>
         <module>tensquare_recruit</module>
+        <module>tensquare_qa</module>
     </modules>
     <packaging>pom</packaging>
 
     <name>tensquare_parent</name>
-    <description>十次方项目-黑马程序员</description>
+    <description>十次方项目</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

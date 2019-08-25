@@ -177,5 +177,16 @@ public class RecruitService {
 		};
 
 	}
-
+	/**
+	 * 根据状态查询
+	 */
+	public List<Recruit> findTop4ByStateOrderByCreatetimeDesc(String state){
+		return recruitDao.findTop4ByStateOrderByCreatetimeDesc(state);
+	}
+	/**
+	 * 最新职位列表
+	 */
+	public List<Recruit> newlist(){
+		return recruitDao.findTop12ByStateNotOrderByCreatetimeDesc("0");
+	}
 }
