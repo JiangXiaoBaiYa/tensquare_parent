@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 标签控制层
@@ -66,4 +67,13 @@ public class LabelController {
         labelService.deleteById(id);
         return new Result(true, StatusCode.OK, "删除成功");
     }
+
+    /**
+     * 根据条件查询
+     */
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    public Result<List> findSearch(@RequestBody Map searchmap) {
+        return new Result<>(true, StatusCode.OK, "查询成功", labelService.findSearch(searchmap));
+    }
+
 }
