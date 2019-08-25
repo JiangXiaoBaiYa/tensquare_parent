@@ -81,6 +81,7 @@ public class LabelController {
     /**
      * 带分页的条件查询
      */
+    @RequestMapping(value = "/search/{page}/{size}",method = RequestMethod.GET)
     public Result<List> findSearch(@RequestBody Map searchMap, @PathVariable int page, @PathVariable int size) {
         Page<Label> pageList = labelService.findSearch(searchMap, page, size);
         return new Result<>(true, StatusCode.OK, "查询成功", new PageResult<>(pageList.getTotalElements(), pageList.getContent()));
